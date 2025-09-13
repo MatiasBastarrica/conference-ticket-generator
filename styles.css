@@ -15,7 +15,7 @@
   --gradient-2: hsl(0, 0%, 100%);
 
   /* # TYPOGRAPHY # */
-  --ff-inconsolata: ;
+  --ff-inconsolata: "Inconsolata", monospace;
   --fw-400: 400;
   --fw-500: 500;
   --fw-700: 700;
