@@ -13,4 +13,11 @@
   /* text */
   --gradient-1: hsl(7, 86%, 67%);
   --gradient-2: hsl(0, 0%, 100%);
+
+  /* # TYPOGRAPHY # */
+  --ff-inconsolata: ;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-800: 800;
 }
