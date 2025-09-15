@@ -21,22 +21,104 @@
     <title>Frontend Mentor | Conference ticket generator</title>
   </head>
   <body>
+    <header>
+      <div class="logo-container">
+        <img src="./assets/images/logo-full.svg" alt="Coding Conf logo." />
+      </div>
+      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p class="subtitle">
+        Secure your spot at next year's biggest coding conference.
+      </p>
+    </header>
+    <main>
+      <form action="#">
+        <div>
+          <label for="file-selector">Upload Avatar</label>
+          <input type="file" name="avatar-photo" id="file-selector" />
+          <div class="avatar-photo-instructions">
+            Drag and drop or click to upload
+          </div>
+          <div class="avatar-photo-info">
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </div>
+        </div>
+        <div>
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" />
+        </div>
+        <div>
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+          />
+        </div>
+        <div>
+          <label for="github-username">GitHub Username</label>
+          <input
+            type="text"
+            name="github-username"
+            id="github-username"
+            placeholder="@yourusername"
+          />
+        </div>
+        <button type="submit">Generate My Ticket</button>
+      </form>
+    </main>
+    <dialog class="success-modal">
+      <div class="logo-container">
+        <img src="./assets/images/logo-full.svg" alt="Coding Conf logo." />
+      </div>
+      <h2>
+        Congrats, <span class="full-name">Full Name</span>! Your ticket is
+        ready.
+      </h2>
+      <p class="subtitle">
+        We've emailed your ticket to
+        <span class="email-address">Email Address</span> and will send updates
+        in the run up to the event.
+      </p>
+      <div class="ticket">
+        <div class="ticket__header">
+          <div class="logo-mark-container">
+            <img src="./assets/images/logo-mark.svg" alt="Coding Conf logo." />
+          </div>
+          <div class="text">
+            <h3>Coding Conf</h3>
+            <p class="location-info">Jan 31, 2025 / Austin, TX</p>
+          </div>
+        </div>
+        <div class="ticket__content">
+          <div class="avatar-photo-container">
+            <img src="./assets/images/image-avatar.jpg" alt="Jonatan Kristof" />
+          </div>
+          <div class="text">
+            <h3><span class="full-name">Full Name</span></h3>
+            <p>
+              <span class="github-icon"
+                ><img src="./assets/images/icon-github.svg" alt=""
+              /></span>
+              <span class="github-username">github username</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </dialog>
     <!-- Form starts -->
 
-    Your Journey to Coding Conf 2025 Starts Here! Secure your spot at next
-    year's biggest coding conference. Upload Avatar Drag and drop or click to
-    upload Upload your photo (JPG or PNG, max size: 500KB). Full Name Email
-    Address example@email.com GitHub Username @yourusername Generate My Ticket
+    <!--     -->
 
     <!-- Form ends -->
 
     <!-- Generated tickets starts -->
 
-    Congrats,
-    <!-- Full Name -->! Your ticket is ready. We've emailed your ticket to
-    <!-- Email Address -->
-    and will send updates in the run up to the event. Coding Conf Jan 31, 2025 /
-    Austin, TX
+    <!--  -->
+    <!--  -->
+    <!--    -->
+    <!--  -->
+    <!--    -->
 
     <!-- Generated tickets ends -->
     <script src="script.js"></script>
