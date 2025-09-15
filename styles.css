@@ -118,6 +118,12 @@ form {
   position: relative;
   padding: 1.3rem;
   background-color: #1a163985;
+  display: block;
+}
+
+.drop-zone:hover {
+  cursor: pointer;
+  background-color: #373451a4;
 }
 
 #file-selector {
@@ -173,6 +179,11 @@ input {
   font-size: 1.075rem;
 }
 
+input:hover {
+  cursor: pointer;
+  background-color: #373451a4;
+}
+
 input::placeholder {
   color: #cfcde2;
   font-weight: var(--fw-500);
@@ -187,4 +198,9 @@ button {
   font-weight: var(--fw-800);
   color: var(--neutral-900);
   font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: var(--orange-700);
+  cursor: pointer;
 }
