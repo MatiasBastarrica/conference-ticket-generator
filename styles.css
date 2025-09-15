@@ -64,3 +64,34 @@ body::before {
   height: 50vh;
   background-image: url(./assets/images/pattern-lines.svg);
 }
+
+p {
+  line-height: 1.5;
+}
+
+/* ### CONFERENCE TICKET GENERATOR ### */
+
+/* ## HEADER ## */
+
+header {
+  padding: 1.5rem;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+header .logo-container {
+  width: 150px;
+  /* margin-inline: auto; */
+}
+
+header h1 {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+}
+
+header .subtitle {
+  margin-top: 0.3rem;
+  font-size: 1.125rem;
+}
