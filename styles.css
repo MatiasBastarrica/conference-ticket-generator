@@ -43,3 +43,24 @@ picture {
   display: block;
   max-width: 100%;
 }
+
+/* ### GENERAL STYLING ### */
+
+body {
+  font-family: var(--ff-inconsolata);
+  font-weight: var(--fw-400);
+  background-image: url(./assets/images/background-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--neutral-0);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  background-image: url(./assets/images/pattern-lines.svg);
+}
