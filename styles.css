@@ -45,6 +45,12 @@ picture {
   max-width: 100%;
 }
 
+/* ### UTILITIES ### */
+
+.avatar-photo-info.error svg path {
+  stroke: red;
+}
+
 /* ### GENERAL STYLING ### */
 
 body {
