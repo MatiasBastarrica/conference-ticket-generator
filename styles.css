@@ -48,7 +48,11 @@ picture {
 /* ### UTILITIES ### */
 
 .avatar-photo-info.error svg path {
-  stroke: red;
+  stroke: #9b6776;
+}
+
+.avatar-photo-info.error {
+  color: #9b6776;
 }
 
 /* ### GENERAL STYLING ### */
