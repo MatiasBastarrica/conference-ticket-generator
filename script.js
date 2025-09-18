@@ -8,6 +8,14 @@ const infoMsg = uploadInfoOutput.querySelector(".upload-err-msg");
 
 dropZone.addEventListener("drop", dropHandler);
 
+// dropZone.addEventListener("dragenter", () => {
+//   dropZone.style.backgroundColor = "#373451a4";
+// });
+
+// dropZone.addEventListener("dragleave", () => {
+//   dropZone.style.backgroundColor = "#1a163985";
+// });
+
 window.addEventListener("dragover", (e) => {
   e.preventDefault();
 });
@@ -28,8 +36,19 @@ function dropHandler(ev) {
       if (file.size > 500e3) {
         result += `File too large. Please upload a photo under 500KB.`;
         infoMsg.textContent = result;
-        uploadInfoOutput.classList.add("error");
+        changeMsgColor(uploadInfoOutput);
+      } else {
+        resetMsg(uploadInfoOutput);
       }
     }
   });
+}
+
+function changeMsgColor(element) {
+  element.classList.add("error");
+}
+
+function resetMsg(element) {
+  element.classList.remove("error");
+  infoMsg.textContent = "Upload your photo (JPG or PNG, max size: 500KB).";
 }
