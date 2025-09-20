@@ -1,7 +1,5 @@
 const fileInput = document.querySelector("input[type='file']");
 
-fileInput.style.opacity = "0";
-
 const preview = document.querySelector(".preview");
 
 let dropbox;
