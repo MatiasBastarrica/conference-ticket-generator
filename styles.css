@@ -65,6 +65,10 @@ picture {
   width: 1px;
 }
 
+.hide {
+  display: none;
+}
+
 /* ### GENERAL STYLING ### */
 
 body {
