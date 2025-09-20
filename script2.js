@@ -19,6 +19,7 @@ function dragenter(e) {
 function dragover(e) {
   e.stopPropagation();
   e.preventDefault();
+  e.dataTransfer.dropEffect = "copy";
 }
 
 function drop(e) {
@@ -39,7 +40,7 @@ function handleFiles(files) {
 
     const img = document.createElement("img");
     img.classList.add("obj");
-    img.file = file;
+    // img.file = file;
     preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
 
     const reader = new FileReader();
