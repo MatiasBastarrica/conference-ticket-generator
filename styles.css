@@ -162,7 +162,7 @@ form {
   margin-inline: auto;
 }
 
-.avatar-photo-instructions {
+.drag-and-drop-instructions__text {
   margin-top: 1.4rem;
   text-align: center;
   color: #bbb6d8;

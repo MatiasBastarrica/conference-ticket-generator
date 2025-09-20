@@ -1,6 +1,6 @@
 const fileInput = document.querySelector("input[type='file']");
 
-const preview = document.querySelector(".preview");
+const dropInstuctions = document.querySelector(".drag-and-drop-instructions");
 
 let dropbox;
 
