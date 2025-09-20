@@ -149,6 +149,8 @@ form {
 
 #file-selector {
   position: absolute;
+  border: 0;
+  padding: 0;
 }
 
 .upload-icon-container {
