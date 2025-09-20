@@ -36,10 +36,7 @@ function handleFiles(files) {
       continue;
     }
 
-    const img = document.createElement("img");
-    img.classList.add("obj");
-    // img.file = file;
-    preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
+    const img = document.querySelector(".upload-icon-container img");
 
     const reader = new FileReader();
     reader.onload = (e) => {
