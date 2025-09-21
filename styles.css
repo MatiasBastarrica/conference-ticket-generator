@@ -174,6 +174,26 @@ form {
   font-size: clamp(1.12rem, 1.0742rem + 0.1953vw, 1.25rem);
 }
 
+.thumbail-btns {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.thumbail-btns button {
+  background-color: #2f2d539a;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.6rem;
+  width: fit-content;
+  color: #dddaf5;
+  cursor: pointer;
+}
+
+.thumbail-btns button:first-child {
+  text-decoration: underline;
+}
+
 .avatar-photo-info {
   margin-top: 0.8rem;
 }
@@ -216,7 +236,7 @@ input::placeholder {
   font-weight: var(--fw-500);
 }
 
-button {
+form > button {
   background-color: var(--orange-500);
   padding: 1.1rem;
   text-align: center;
@@ -227,7 +247,7 @@ button {
   font-size: clamp(1.2rem, 1.1296rem + 0.3005vw, 1.4rem);
 }
 
-button:hover {
+form > button:hover {
   background-color: var(--orange-700);
   cursor: pointer;
 }
