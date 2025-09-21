@@ -7,6 +7,9 @@ const thumbailDisplay = document.querySelector(".thumbail-display");
 const removeBtn = document.querySelector(".remove-btn");
 const changeBtn = document.querySelector(".change-btn");
 
+const uploadInfoOutput = document.querySelector(".avatar-photo-info");
+const infoMsg = uploadInfoOutput.querySelector(".upload-err-msg");
+
 let counter = 0;
 
 let dropbox;
@@ -51,19 +54,29 @@ function drop(e) {
 
 function handleFiles(files) {
   for (const file of files) {
-    if (!file.type.startsWith("image/")) {
-      continue;
+    // if (!file.type.startsWith("image/")) {
+    //   continue;
+    // }
+
+    let result = "";
+
+    if (file.size > 500e3) {
+      result += `File too large. Please upload a photo under 500KB.`;
+      infoMsg.textContent = result;
+      changeMsgColor(uploadInfoOutput);
+    } else {
+      resetMsg(uploadInfoOutput);
+      dropInstructions.classList.add("hide");
+      thumbailDisplay.classList.remove("hide");
+
+      const img = document.querySelector(".thumbail-container img");
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
     }
-    dropInstructions.classList.add("hide");
-    thumbailDisplay.classList.remove("hide");
-
-    const img = document.querySelector(".thumbail-container img");
-
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
   }
 }
 
@@ -81,3 +94,12 @@ function file() {
 changeBtn.addEventListener("click", () => {
   fileInput.click();
 });
+
+function changeMsgColor(element) {
+  element.classList.add("error");
+}
+
+function resetMsg(element) {
+  element.classList.remove("error");
+  infoMsg.textContent = "Upload your photo (JPG or PNG, max size: 500KB).";
+}
