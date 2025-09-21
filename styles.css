@@ -212,7 +212,7 @@ form {
   background-color: #373451a4;
 }
 
-.thumbail-btns button:first-child {
+.thumbail-btns .remove-btn {
   text-decoration: underline;
 }
 

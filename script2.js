@@ -4,6 +4,9 @@ const dropInstructions = document.querySelector(".drag-and-drop-instructions");
 
 const thumbailDisplay = document.querySelector(".thumbail-display");
 
+const removeBtn = document.querySelector(".remove-btn");
+const changeBtn = document.querySelector(".change-btn");
+
 let counter = 0;
 
 let dropbox;
@@ -51,8 +54,8 @@ function handleFiles(files) {
     if (!file.type.startsWith("image/")) {
       continue;
     }
-    dropInstructions.classList.toggle("hide");
-    thumbailDisplay.classList.toggle("hide");
+    dropInstructions.classList.add("hide");
+    thumbailDisplay.classList.remove("hide");
 
     const img = document.querySelector(".thumbail-container img");
 
