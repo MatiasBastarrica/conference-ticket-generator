@@ -71,3 +71,9 @@ removeBtn.addEventListener("click", () => {
   dropInstructions.classList.remove("hide");
   thumbailDisplay.classList.add("hide");
 });
+
+fileInput.addEventListener("change", file, false);
+
+function file() {
+  handleFiles(this.files);
+}
