@@ -141,14 +141,9 @@ form {
   border: 2px dashed #8685a7;
   border-radius: 0.5rem;
   position: relative;
-  padding: 1.3rem;
+  /* padding: 1.3rem; */
   background-color: #1a163985;
   display: block;
-}
-
-.drop-zone:hover {
-  cursor: pointer;
-  background-color: #373451a4;
 }
 
 #file-selector {
@@ -166,12 +161,25 @@ form {
   margin-inline: auto;
 }
 
+.drag-and-drop-instructions {
+  padding: 1.3rem;
+}
+
+.drag-and-drop-instructions:hover {
+  cursor: pointer;
+  background-color: #373451a4;
+}
+
 .drag-and-drop-instructions__text {
   margin-top: 1.4rem;
   text-align: center;
   color: #bbb6d8;
   font-weight: var(--fw-500);
   font-size: clamp(1.12rem, 1.0742rem + 0.1953vw, 1.25rem);
+}
+
+.thumbail-display {
+  padding: 1.3rem;
 }
 
 .thumbail-container {
@@ -193,10 +201,15 @@ form {
   background-color: #2f2d539a;
   border: none;
   border-radius: 0.2rem;
-  padding: 0.6rem;
+  padding: 0.6rem 0.8rem;
   width: fit-content;
   color: #dddaf5;
   cursor: pointer;
+  font-size: 1rem;
+}
+
+.thumbail-btns button:hover {
+  background-color: #373451a4;
 }
 
 .thumbail-btns button:first-child {
