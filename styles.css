@@ -174,10 +174,19 @@ form {
   font-size: clamp(1.12rem, 1.0742rem + 0.1953vw, 1.25rem);
 }
 
+.thumbail-container {
+  width: 60px;
+  overflow: hidden;
+  margin-inline: auto;
+  border: 1px solid #4b476c;
+  border-radius: 0.8rem;
+}
+
 .thumbail-btns {
   display: flex;
   gap: 0.8rem;
   justify-content: center;
+  margin-top: 1.4rem;
 }
 
 .thumbail-btns button {

@@ -1,6 +1,8 @@
 const fileInput = document.querySelector("input[type='file']");
 
-const dropInstuctions = document.querySelector(".drag-and-drop-instructions");
+const dropInstructions = document.querySelector(".drag-and-drop-instructions");
+
+const thumbailDisplay = document.querySelector(".thumbail-display");
 
 let dropbox;
 
@@ -35,8 +37,10 @@ function handleFiles(files) {
     if (!file.type.startsWith("image/")) {
       continue;
     }
+    dropInstructions.classList.toggle("hide");
+    thumbailDisplay.classList.toggle("hide");
 
-    const img = document.querySelector(".upload-icon-container img");
+    const img = document.querySelector(".thumbail-container img");
 
     const reader = new FileReader();
     reader.onload = (e) => {
