@@ -54,15 +54,12 @@ function drop(e) {
 
 function handleFiles(files) {
   for (const file of files) {
-    // if (!file.type.startsWith("image/")) {
-    //   continue;
-    // }
-
-    let result = "";
-
-    if (file.size > 500e3) {
-      result += `File too large. Please upload a photo under 500KB.`;
-      infoMsg.textContent = result;
+    const allowedFileTypes = ["image/png", "image/jpg"];
+    if (!allowedFileTypes.includes(file.type)) {
+      infoMsg.textContent = `Wrong image format. Please upload a JPG or PNG.`;
+      changeMsgColor(uploadInfoOutput);
+    } else if (file.size > 500e3) {
+      infoMsg.textContent = `File too large. Please upload a photo under 500KB.`;
       changeMsgColor(uploadInfoOutput);
     } else {
       resetMsg(uploadInfoOutput);
