@@ -4,16 +4,30 @@ const dropInstructions = document.querySelector(".drag-and-drop-instructions");
 
 const thumbailDisplay = document.querySelector(".thumbail-display");
 
+let counter = 0;
+
 let dropbox;
 
 dropbox = document.querySelector(".drop-zone");
 dropbox.addEventListener("dragenter", dragenter, false);
+dropbox.addEventListener("dragleave", dragleave, false);
 dropbox.addEventListener("dragover", dragover, false);
 dropbox.addEventListener("drop", drop, false);
 
 function dragenter(e) {
   e.stopPropagation();
   e.preventDefault();
+  counter++;
+  dropbox.style.backgroundColor = "#373451a4";
+}
+
+function dragleave(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  counter--;
+  if (counter === 0) {
+    dropbox.style.backgroundColor = "#1a163985";
+  }
 }
 
 function dragover(e) {
@@ -25,7 +39,7 @@ function dragover(e) {
 function drop(e) {
   e.stopPropagation();
   e.preventDefault();
-
+  counter = 0;
   const dt = e.dataTransfer;
   const files = dt.files;
 
