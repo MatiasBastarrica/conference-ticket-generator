@@ -66,3 +66,8 @@ function handleFiles(files) {
     reader.readAsDataURL(file);
   }
 }
+
+removeBtn.addEventListener("click", () => {
+  dropInstructions.classList.remove("hide");
+  thumbailDisplay.classList.add("hide");
+});
