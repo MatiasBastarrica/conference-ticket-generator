@@ -77,3 +77,7 @@ fileInput.addEventListener("change", file, false);
 function file() {
   handleFiles(this.files);
 }
+
+changeBtn.addEventListener("click", () => {
+  fileInput.click();
+});
