@@ -47,11 +47,13 @@ picture {
 
 /* ### UTILITIES ### */
 
-.avatar-photo-info.error svg path {
+.avatar-photo-info.error svg path,
+.email-error-container.error svg path {
   stroke: #9b6776;
 }
 
-.avatar-photo-info.error {
+.avatar-photo-info.error,
+.email-error-container.error {
   color: #9b6776;
 }
 
@@ -217,11 +219,13 @@ form {
   text-decoration: underline;
 }
 
-.avatar-photo-info {
+.avatar-photo-info,
+.email-error-container {
   margin-top: 0.8rem;
 }
 
-.avatar-photo-info p {
+.avatar-photo-info p,
+.email-error-container p {
   display: flex;
   align-items: center;
   gap: 0.5rem;

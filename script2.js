@@ -10,6 +10,9 @@ const changeBtn = document.querySelector(".change-btn");
 const uploadInfoOutput = document.querySelector(".avatar-photo-info");
 const infoMsg = uploadInfoOutput.querySelector(".upload-err-msg");
 
+const emailInput = document.querySelector("#email");
+const emailErrContainer = document.querySelector(".email-error-container");
+
 let counter = 0;
 
 let dropbox;
@@ -100,3 +103,11 @@ function resetMsg(element) {
   element.classList.remove("error");
   infoMsg.textContent = "Upload your photo (JPG or PNG, max size: 500KB).";
 }
+
+emailInput.addEventListener("input", (e) => {
+  if (emailInput.validity.typeMismatch) {
+    emailErrContainer.classList.remove("hide");
+  } else {
+    emailErrContainer.classList.add("hide");
+  }
+});
