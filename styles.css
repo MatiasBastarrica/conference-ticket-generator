@@ -47,13 +47,11 @@ picture {
 
 /* ### UTILITIES ### */
 
-.avatar-photo-info.error svg path,
-.email-error-container.error svg path {
+.error svg path {
   stroke: #9b6776;
 }
 
-.avatar-photo-info.error,
-.email-error-container.error {
+.error {
   color: #9b6776;
 }
 
@@ -133,10 +131,14 @@ main {
   padding: 1rem;
 }
 
+/* ## FORM ## */
+
 form {
   display: grid;
   gap: 1.5rem;
 }
+
+/* # DRAG AND DROP SECTION # */
 
 .drop-zone {
   margin-top: 1rem;
@@ -155,14 +157,7 @@ form {
   opacity: 0;
 }
 
-.upload-icon-container {
-  padding: 0.6rem;
-  border: 1px solid #4b476c;
-  border-radius: 0.8rem;
-  background-color: #332f52;
-  width: 51.2px;
-  margin-inline: auto;
-}
+/* DRAG AND DROP INSTRUCTIONS */
 
 .drag-and-drop-instructions {
   padding: 1.3rem;
@@ -173,6 +168,15 @@ form {
   background-color: #373451a4;
 }
 
+.upload-icon-container {
+  padding: 0.6rem;
+  border: 1px solid #4b476c;
+  border-radius: 0.8rem;
+  background-color: #332f52;
+  width: 51.2px;
+  margin-inline: auto;
+}
+
 .drag-and-drop-instructions__text {
   margin-top: 1.4rem;
   text-align: center;
@@ -180,6 +184,8 @@ form {
   font-weight: var(--fw-500);
   font-size: clamp(1.12rem, 1.0742rem + 0.1953vw, 1.25rem);
 }
+
+/* THUMBAIL DISPLAY */
 
 .thumbail-display {
   padding: 1.3rem;
@@ -219,18 +225,15 @@ form {
   text-decoration: underline;
 }
 
-.avatar-photo-info,
-.email-error-container {
+.validation-msg .wrapper {
   margin-top: 0.8rem;
-}
-
-.avatar-photo-info p,
-.email-error-container p {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: clamp(0.75rem, 0.7324rem + 0.0751vw, 0.8rem);
 }
+
+/* # END OF DRAG AND DROP SECTION # */
 
 input,
 button {

@@ -10,11 +10,11 @@ let counter = 0;
 const dropInstructions = document.querySelector(".drag-and-drop-instructions");
 const thumbailDisplay = document.querySelector(".thumbail-display");
 
-const uploadInfoOutput = document.querySelector(".avatar-photo-info");
-const infoMsg = uploadInfoOutput.querySelector(".upload-err-msg");
+const uploadInfoOutput = document.querySelector(".drop-zone ~ .validation-msg");
+const infoMsg = uploadInfoOutput.querySelector(".validation-text");
 
 const emailInput = document.querySelector("#email");
-const emailErrContainer = document.querySelector(".email-error-container");
+const emailErrContainer = document.querySelector("#email ~ .validation-msg");
 
 // ### FUNCTIONS ###
 

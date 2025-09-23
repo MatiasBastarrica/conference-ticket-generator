@@ -32,7 +32,7 @@
     </header>
     <main>
       <form action="#">
-        <div>
+        <div class="input-wrapper">
           <label for="file-selector">Upload Avatar</label>
           <label for="file-selector" class="drop-zone">
             <input
@@ -63,8 +63,8 @@
               </div>
             </div>
           </label>
-          <div class="avatar-photo-info">
-            <p>
+          <div class="validation-msg error">
+            <div class="wrapper">
               <span class="info-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -88,17 +88,45 @@
                   />
                 </svg>
               </span>
-              <span class="upload-err-msg"
+              <span class="validation-text"
                 >Upload your photo (JPG or PNG, max size: 500KB).</span
               >
-            </p>
+            </div>
           </div>
         </div>
-        <div>
+        <div class="input-wrapper">
           <label for="full-name">Full Name</label>
           <input type="text" id="full-name" />
+          <div class="validation-msg error hide">
+            <div class="wrapper">
+              <span class="info-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    stroke="#D1D0D5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"
+                  />
+                  <path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                  <path
+                    stroke="#D1D0D5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.004 10.462V7.596M8 5.569v-.042"
+                  />
+                </svg>
+              </span>
+              <span class="validation-text"></span>
+            </div>
+          </div>
         </div>
-        <div>
+        <div class="input-wrapper">
           <label for="email">Email Address</label>
           <input
             type="email"
@@ -106,8 +134,8 @@
             id="email"
             placeholder="example@email.com"
           />
-          <div class="email-error-container error hide">
-            <p>
+          <div class="validation-msg error hide">
+            <div class="wrapper">
               <span class="info-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -131,13 +159,13 @@
                   />
                 </svg>
               </span>
-              <span class="email-error-message"
+              <span class="validation-text"
                 >Plese enter a valid email address.</span
               >
-            </p>
+            </div>
           </div>
         </div>
-        <div>
+        <div class="input-wrapper">
           <label for="github-username">GitHub Username</label>
           <input
             type="text"
@@ -145,6 +173,34 @@
             id="github-username"
             placeholder="@yourusername"
           />
+          <div class="validation-msg error hide">
+            <div class="wrapper">
+              <span class="info-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    stroke="#D1D0D5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"
+                  />
+                  <path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                  <path
+                    stroke="#D1D0D5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.004 10.462V7.596M8 5.569v-.042"
+                  />
+                </svg>
+              </span>
+              <span class="validation-text"></span>
+            </div>
+          </div>
         </div>
         <button type="submit">Generate My Ticket</button>
       </form>
