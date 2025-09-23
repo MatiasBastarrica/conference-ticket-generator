@@ -15,6 +15,11 @@ const infoMsg = uploadInfoOutput.querySelector(".validation-text");
 
 const emailInput = document.querySelector("#email");
 const emailErrContainer = document.querySelector("#email ~ .validation-msg");
+const emailErrMsg = emailErrContainer.querySelector(".validation-text");
+
+const inputsWrapper = document.querySelectorAll(".input-wrapper");
+const form = document.querySelector("form");
+const submitBtn = form.querySelector("button[type='submit']");
 
 // ### FUNCTIONS ###
 
@@ -118,7 +123,29 @@ fileInput.addEventListener("change", file, false);
 emailInput.addEventListener("input", (e) => {
   if (emailInput.validity.typeMismatch) {
     emailErrContainer.classList.remove("hide");
+    emailErrMsg.textContent = "Plese enter a valid email address.";
+    emailInput.style.outline = "2px solid #b88894";
   } else {
     emailErrContainer.classList.add("hide");
+    emailInput.style.outline = "unset";
   }
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+inputsWrapper.forEach((inputWrapper) => {
+  const input = inputWrapper.querySelector("input");
+  const validationMsg = inputWrapper.querySelector(".validation-msg");
+  const validationText = validationMsg.querySelector(".validation-text");
+
+  input.addEventListener("invalid", (e) => {
+    e.preventDefault();
+    if (input.validity.valueMissing) {
+      validationMsg.classList.add("error");
+      validationMsg.classList.remove("hide");
+      validationText.textContent = "This field should be completed.";
+    }
+  });
 });

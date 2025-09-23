@@ -48,12 +48,16 @@ picture {
 /* ### UTILITIES ### */
 
 .error svg path {
-  stroke: #9b6776;
+  stroke: #b88894;
 }
 
 .error {
-  color: #9b6776;
+  color: #b88894;
 }
+
+/* .error input {
+  outline: 2px solid #b88894;
+} */
 
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
