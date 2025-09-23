@@ -86,6 +86,15 @@ function handleFiles(files) {
       reader.readAsDataURL(file);
     }
   }
+
+  if (files.length) {
+    const newDt = new DataTransfer();
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      newDt.items.add(file);
+    }
+    fileInput.files = newDt.files;
+  }
 }
 
 // ### EVENT LISTENERS ###
