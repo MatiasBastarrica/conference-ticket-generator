@@ -72,6 +72,7 @@ picture {
 /* ### GENERAL STYLING ### */
 
 body {
+  min-height: 100vh;
   font-family: var(--ff-inconsolata);
   font-weight: var(--fw-400);
   background-image: url(./assets/images/background-mobile.png);
