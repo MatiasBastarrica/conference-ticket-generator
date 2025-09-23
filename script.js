@@ -1,11 +1,14 @@
+// ### VARIABLES ###
 const fileInput = document.querySelector("input[type='file']");
-
-const dropInstructions = document.querySelector(".drag-and-drop-instructions");
-
-const thumbailDisplay = document.querySelector(".thumbail-display");
-
 const removeBtn = document.querySelector(".remove-btn");
 const changeBtn = document.querySelector(".change-btn");
+let dropbox;
+dropbox = document.querySelector(".drop-zone");
+
+let counter = 0;
+
+const dropInstructions = document.querySelector(".drag-and-drop-instructions");
+const thumbailDisplay = document.querySelector(".thumbail-display");
 
 const uploadInfoOutput = document.querySelector(".avatar-photo-info");
 const infoMsg = uploadInfoOutput.querySelector(".upload-err-msg");
@@ -13,15 +16,7 @@ const infoMsg = uploadInfoOutput.querySelector(".upload-err-msg");
 const emailInput = document.querySelector("#email");
 const emailErrContainer = document.querySelector(".email-error-container");
 
-let counter = 0;
-
-let dropbox;
-
-dropbox = document.querySelector(".drop-zone");
-dropbox.addEventListener("dragenter", dragenter, false);
-dropbox.addEventListener("dragleave", dragleave, false);
-dropbox.addEventListener("dragover", dragover, false);
-dropbox.addEventListener("drop", drop, false);
+// ### FUNCTIONS ###
 
 function dragenter(e) {
   e.stopPropagation();
@@ -55,6 +50,19 @@ function drop(e) {
   handleFiles(files);
 }
 
+function file() {
+  handleFiles(this.files);
+}
+
+function changeMsgColor(element) {
+  element.classList.add("error");
+}
+
+function resetMsg(element) {
+  element.classList.remove("error");
+  infoMsg.textContent = "Upload your photo (JPG or PNG, max size: 500KB).";
+}
+
 function handleFiles(files) {
   for (const file of files) {
     const allowedFileTypes = ["image/png", "image/jpg"];
@@ -80,29 +88,23 @@ function handleFiles(files) {
   }
 }
 
+// ### EVENT LISTENERS ###
+
+dropbox.addEventListener("dragenter", dragenter, false);
+dropbox.addEventListener("dragleave", dragleave, false);
+dropbox.addEventListener("dragover", dragover, false);
+dropbox.addEventListener("drop", drop, false);
+
 removeBtn.addEventListener("click", () => {
   dropInstructions.classList.remove("hide");
   thumbailDisplay.classList.add("hide");
 });
 
-fileInput.addEventListener("change", file, false);
-
-function file() {
-  handleFiles(this.files);
-}
-
 changeBtn.addEventListener("click", () => {
   fileInput.click();
 });
 
-function changeMsgColor(element) {
-  element.classList.add("error");
-}
-
-function resetMsg(element) {
-  element.classList.remove("error");
-  infoMsg.textContent = "Upload your photo (JPG or PNG, max size: 500KB).";
-}
+fileInput.addEventListener("change", file, false);
 
 emailInput.addEventListener("input", (e) => {
   if (emailInput.validity.typeMismatch) {
