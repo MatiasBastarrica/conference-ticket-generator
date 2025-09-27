@@ -24,6 +24,8 @@ const submitBtn = form.querySelector("button[type='submit']");
 const fullNameInput = document.querySelector("#full-name");
 const gitHubInput = document.querySelector("#github-username");
 
+const dialog = document.querySelector(".success-modal");
+
 const formStatus = {
   avatarUpload: false,
   fullName: false,
@@ -155,6 +157,10 @@ form.addEventListener("submit", (e) => {
     if (input !== fileInput && !input.validity.valueMissing) {
       setFormStatus(input, true);
     }
+
+    if (getFormStatus()) {
+      dialog.show();
+    }
   });
 });
 
@@ -196,4 +202,18 @@ function setFormStatus(input, status) {
     default:
       break;
   }
+}
+
+function getFormStatus() {
+  for (const input in formStatus) {
+    if (!Object.hasOwn(formStatus, input)) continue;
+
+    const status = formStatus[input];
+
+    if (!status) {
+      return false;
+    }
+  }
+
+  return true;
 }
