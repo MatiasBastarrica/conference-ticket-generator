@@ -33,6 +33,10 @@ const formStatus = {
   gitHubUsername: false,
 };
 
+const fullNamesDisplay = document.querySelectorAll(".full-name");
+const emailDisplay = document.querySelector(".email-address");
+const githubDisplay = document.querySelector(".github-username");
+
 // ### FUNCTIONS ###
 
 function dragenter(e) {
@@ -161,6 +165,11 @@ form.addEventListener("submit", (e) => {
 
     if (getFormStatus()) {
       dialog.show();
+      fullNamesDisplay.forEach((fullName) => {
+        fullName.textContent = fullNameInput.value;
+      });
+      emailDisplay.textContent = emailInput.value;
+      githubDisplay.textContent = gitHubInput.value;
     }
   });
 });
