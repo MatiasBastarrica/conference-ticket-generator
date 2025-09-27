@@ -146,6 +146,7 @@ inputsWrapper.forEach((inputWrapper) => {
       validationMsg.classList.add("error");
       validationMsg.classList.remove("hide");
       validationText.textContent = "This field should be completed.";
+      input.style.outline = "2px solid #b88894";
     }
   });
 });
