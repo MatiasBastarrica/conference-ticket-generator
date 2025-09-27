@@ -21,6 +21,16 @@ const inputsWrapper = document.querySelectorAll(".input-wrapper");
 const form = document.querySelector("form");
 const submitBtn = form.querySelector("button[type='submit']");
 
+const fullNameInput = document.querySelector("#full-name");
+const gitHubInput = document.querySelector("#github-username");
+
+const formStatus = {
+  avatarUpload: false,
+  fullName: false,
+  email: false,
+  gitHubUsername: false,
+};
+
 // ### FUNCTIONS ###
 
 function dragenter(e) {
@@ -74,11 +84,14 @@ function handleFiles(files) {
     if (!allowedFileTypes.includes(file.type)) {
       infoMsg.textContent = `Wrong image format. Please upload a JPG or PNG.`;
       changeMsgColor(uploadInfoOutput);
+      formStatus.avatarUpload = false;
     } else if (file.size > 500e3) {
       infoMsg.textContent = `File too large. Please upload a photo under 500KB.`;
       changeMsgColor(uploadInfoOutput);
+      formStatus.avatarUpload = false;
     } else {
       resetMsg(uploadInfoOutput);
+      formStatus.avatarUpload = true;
       dropInstructions.classList.add("hide");
       thumbailDisplay.classList.remove("hide");
 
@@ -112,6 +125,7 @@ dropbox.addEventListener("drop", drop, false);
 removeBtn.addEventListener("click", () => {
   dropInstructions.classList.remove("hide");
   thumbailDisplay.classList.add("hide");
+  formStatus.avatarUpload = false;
 });
 
 changeBtn.addEventListener("click", () => {
@@ -125,14 +139,23 @@ emailInput.addEventListener("input", (e) => {
     emailErrContainer.classList.remove("hide");
     emailErrMsg.textContent = "Plese enter a valid email address.";
     emailInput.style.outline = "2px solid #b88894";
+    formStatus.email = false;
   } else {
     emailErrContainer.classList.add("hide");
     emailInput.style.outline = "unset";
+    formStatus.email = true;
   }
 });
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  inputsWrapper.forEach((inputWrapper) => {
+    const input = inputWrapper.querySelector("input");
+
+    if (input !== fileInput && !input.validity.valueMissing) {
+      setFormStatus(input, true);
+    }
+  });
 });
 
 inputsWrapper.forEach((inputWrapper) => {
@@ -147,6 +170,30 @@ inputsWrapper.forEach((inputWrapper) => {
       validationMsg.classList.remove("hide");
       validationText.textContent = "This field should be completed.";
       input.style.outline = "2px solid #b88894";
+      setFormStatus(input, false);
     }
   });
+
+  if (input !== fileInput && !input.validity.valueMissing) {
+    setFormStatus(input, true);
+  }
 });
+
+function setFormStatus(input, status) {
+  switch (input) {
+    case fileInput:
+      formStatus.avatarUpload = status;
+      break;
+    case fullNameInput:
+      formStatus.fullName = status;
+      break;
+    case emailInput:
+      formStatus.email = status;
+      break;
+    case gitHubInput:
+      formStatus.gitHubUsername = status;
+      break;
+    default:
+      break;
+  }
+}
