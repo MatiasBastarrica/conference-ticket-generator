@@ -304,12 +304,17 @@ form > button:hover {
   background-size: cover;
   color: var(--neutral-0);
   padding: 1.5rem 1rem;
+
+  border: none;
+
+  text-align: center;
+}
+
+.success-modal .wrapper {
   display: grid;
   justify-items: center;
   align-content: start;
-  border: none;
   gap: 1rem;
-  text-align: center;
 }
 
 .ticket {
@@ -323,6 +328,31 @@ form > button:hover {
   width: 343px;
   height: 160px;
   padding: 1rem;
+}
+
+.email-address {
+  color: var(--orange-500);
+}
+
+.full-name-title {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-1),
+    var(--gradient-2)
+  );
+  -webkit-background-image: linear-gradient(
+    90deg,
+    var(--gradient-1),
+    var(--gradient-2)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
 }
 
 .ticket h3 {
