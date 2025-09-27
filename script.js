@@ -128,6 +128,7 @@ removeBtn.addEventListener("click", () => {
   dropInstructions.classList.remove("hide");
   thumbailDisplay.classList.add("hide");
   formStatus.avatarUpload = false;
+  fileInput.value = "";
 });
 
 changeBtn.addEventListener("click", () => {
@@ -217,3 +218,5 @@ function getFormStatus() {
 
   return true;
 }
+
+// IF I SUBMITT THE FORM BUT LEAVE THE FILE INPUT EMPTY IT DOESNT SHOW THE "EMPTY" VALIDATION MESSAGE
