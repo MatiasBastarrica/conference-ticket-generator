@@ -111,18 +111,21 @@ header {
   text-align: center;
 }
 
-header .logo-container {
+header .logo-container,
+.success-modal .logo-container {
   width: 170px;
   /* margin-inline: auto; */
 }
 
-header h1 {
+header h1,
+.success-modal h2 {
   margin-top: 1.5rem;
   font-size: clamp(1.7rem, 1.2423rem + 1.9531vw, 3rem);
   max-width: 28ch;
 }
 
-header .subtitle {
+header .subtitle,
+.success-modal .subtitle {
   margin-top: 0.3rem;
   font-size: clamp(1.125rem, 1.0634rem + 0.2629vw, 1.3rem);
   color: #c3c0dd;
@@ -287,6 +290,82 @@ form > button:hover {
   cursor: pointer;
 }
 
+/* ### DIALOG ### */
+
+.success-modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: unset;
+  height: unset;
+  background-image: url(./assets/images/background-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--neutral-0);
+  padding: 1.5rem 1rem;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  border: none;
+  gap: 1rem;
+  text-align: center;
+}
+
+.ticket {
+  text-align: start;
+  display: grid;
+  gap: 2rem;
+  margin-top: 5rem;
+  background-image: url(./assets/images/pattern-ticket.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 343px;
+  height: 160px;
+  padding: 1rem;
+}
+
+.ticket h3 {
+  font-size: 1.4rem;
+}
+
+.ticket .full-name {
+  font-weight: var(--fw-500);
+}
+
+.location-info,
+.social-info {
+  font-size: 0.825rem;
+  margin-top: 0.2rem;
+}
+
+.ticket__header,
+.ticket__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-mark-container {
+  width: 35px;
+}
+
+.avatar-photo-container {
+  width: 50px;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.social-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.github-icon {
+  width: 18px;
+}
+
 /* ### MEDIA QUERIES ### */
 
 @media (min-width: 40em) {
@@ -297,5 +376,9 @@ form > button:hover {
   form {
     width: 500px;
     margin-inline: auto;
+  }
+
+  .success-modal {
+    background-image: url(./assets/images/background-desktop.png);
   }
 }
