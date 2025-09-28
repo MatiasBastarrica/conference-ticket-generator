@@ -414,7 +414,8 @@ form > button:hover {
 @media (min-width: 40em) {
   body {
     background: url(./assets/images/pattern-lines.svg),
-      url(./assets/images/background-desktop.png);
+      url(./assets/images/background-tablet.png);
+    background-size: 259%, cover;
   }
 
   form {
@@ -424,5 +425,31 @@ form > button:hover {
 
   .success-modal {
     background-image: url(./assets/images/background-desktop.png);
+  }
+
+  .pattern-line-bottom-mobile {
+    width: 500px;
+    height: 300px;
+    background-size: 100%;
+  }
+}
+
+@media (min-width: 64em) {
+  body {
+    background: url(./assets/images/pattern-lines.svg),
+      url(./assets/images/background-desktop.png);
+    background-size: 259%, cover;
+  }
+
+  .pattern-line-bottom-mobile {
+    display: none;
+  }
+
+  .pattern-line-bottom-desktop {
+    bottom: 0;
+    left: 0;
+    width: 825px;
+    height: 400px;
+    background-image: url(./assets/images/pattern-squiggly-line-bottom-desktop.svg);
   }
 }
