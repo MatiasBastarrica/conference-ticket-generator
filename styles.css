@@ -390,6 +390,7 @@ form > button:hover {
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
+  z-index: -1;
 }
 
 .pattern-line-top {
@@ -398,6 +399,14 @@ form > button:hover {
   width: 110px;
   height: 110px;
   background-image: url(./assets/images/pattern-squiggly-line-top.svg);
+}
+
+.pattern-line-bottom-mobile {
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 200px;
+  background-image: url(./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg);
 }
 
 /* ### MEDIA QUERIES ### */
