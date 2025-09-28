@@ -82,7 +82,7 @@ body {
   background: url(./assets/images/pattern-lines.svg),
     url(./assets/images/background-mobile.png);
   background-repeat: no-repeat;
-  background-size: 259%;
+  background-size: 259%, cover;
   color: var(--neutral-0);
   position: relative;
 }
