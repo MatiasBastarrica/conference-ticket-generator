@@ -427,6 +427,13 @@ form > button:hover {
     background-image: url(./assets/images/background-desktop.png);
   }
 
+  .pattern-line-top {
+    width: 150px;
+    height: 150px;
+    background-size: 160%;
+    background-position: top left -76px;
+  }
+
   .pattern-line-bottom-mobile {
     width: 500px;
     height: 300px;
