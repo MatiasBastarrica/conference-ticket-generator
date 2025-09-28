@@ -79,9 +79,10 @@ body {
   min-height: 100vh;
   font-family: var(--ff-inconsolata);
   font-weight: var(--fw-400);
-  background-image: url(./assets/images/background-mobile.png);
+  background: url(./assets/images/pattern-lines.svg),
+    url(./assets/images/background-mobile.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 259%;
   color: var(--neutral-0);
   position: relative;
 }
@@ -400,7 +401,8 @@ form > button:hover {
 
 @media (min-width: 40em) {
   body {
-    background-image: url(./assets/images/background-desktop.png);
+    background: url(./assets/images/pattern-lines.svg),
+      url(./assets/images/background-desktop.png);
   }
 
   form {
