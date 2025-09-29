@@ -316,6 +316,17 @@ form > button:hover {
   width: 343px;
   height: 160px;
   padding: 1rem;
+  position: relative;
+}
+
+.ticket::before {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%) rotate(90deg);
+  content: "#01609";
+  font: inherit;
+  color: inherit;
 }
 
 .email-address {
