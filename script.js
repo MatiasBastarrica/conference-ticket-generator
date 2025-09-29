@@ -121,6 +121,39 @@ function handleFiles(files) {
   }
 }
 
+function setFormStatus(input, status) {
+  switch (input) {
+    case fileInput:
+      formStatus.avatarUpload = status;
+      break;
+    case fullNameInput:
+      formStatus.fullName = status;
+      break;
+    case emailInput:
+      formStatus.email = status;
+      break;
+    case gitHubInput:
+      formStatus.gitHubUsername = status;
+      break;
+    default:
+      break;
+  }
+}
+
+function getFormStatus() {
+  for (const input in formStatus) {
+    if (!Object.hasOwn(formStatus, input)) continue;
+
+    const status = formStatus[input];
+
+    if (!status) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 // ### EVENT LISTENERS ###
 
 dropbox.addEventListener("dragenter", dragenter, false);
@@ -194,38 +227,3 @@ inputsWrapper.forEach((inputWrapper) => {
     setFormStatus(input, true);
   }
 });
-
-function setFormStatus(input, status) {
-  switch (input) {
-    case fileInput:
-      formStatus.avatarUpload = status;
-      break;
-    case fullNameInput:
-      formStatus.fullName = status;
-      break;
-    case emailInput:
-      formStatus.email = status;
-      break;
-    case gitHubInput:
-      formStatus.gitHubUsername = status;
-      break;
-    default:
-      break;
-  }
-}
-
-function getFormStatus() {
-  for (const input in formStatus) {
-    if (!Object.hasOwn(formStatus, input)) continue;
-
-    const status = formStatus[input];
-
-    if (!status) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-// IF I SUBMITT THE FORM BUT LEAVE THE FILE INPUT EMPTY IT DOESNT SHOW THE "EMPTY" VALIDATION MESSAGE
