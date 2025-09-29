@@ -418,6 +418,10 @@ form > button:hover {
     background-size: 259%, cover;
   }
 
+  header {
+    padding: 2.5rem;
+  }
+
   form {
     width: 500px;
     margin-inline: auto;
@@ -445,7 +449,15 @@ form > button:hover {
   body {
     background: url(./assets/images/pattern-lines.svg),
       url(./assets/images/background-desktop.png);
-    background-size: 259%, cover;
+    background-size: 100%, cover;
+    background-repeat: no-repeat;
+  }
+
+  .pattern-line-top {
+    top: 60px;
+    width: 290px;
+    height: 290px;
+    background-position: top left -167px;
   }
 
   .pattern-line-bottom-mobile {
