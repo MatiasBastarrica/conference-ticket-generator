@@ -292,10 +292,9 @@ form > button:hover {
   background-size: cover;
   color: var(--neutral-0);
   padding: 1.5rem 1rem;
-
   border: none;
-
   text-align: center;
+  z-index: 0;
 }
 
 .success-modal .wrapper {
