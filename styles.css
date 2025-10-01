@@ -482,4 +482,10 @@ form > button:hover {
     height: 400px;
     background-image: url(./assets/images/pattern-squiggly-line-bottom-desktop.svg);
   }
+
+  .ticket {
+    width: 470px;
+    height: 219px;
+    padding: 1.5rem;
+  }
 }
