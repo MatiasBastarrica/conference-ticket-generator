@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My Solution](https://your-solution-url.com)
+- Solution URL: [My Solution](https://www.frontendmentor.io/solutions/conference-ticket-generator-mb-5P8Y2gGktq)
 - Live Site URL: [Live](https://matiasbastarrica.github.io/conference-ticket-generator/)
 
 ## My process
