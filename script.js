@@ -165,6 +165,7 @@ function displayAvatar() {
     avatarImgElement.src = e.target.result;
   };
   reader.readAsDataURL(file);
+  avatarImgElement.setAttribute("alt", `${fullNameInput.value}`);
 }
 
 // ### EVENT LISTENERS ###
