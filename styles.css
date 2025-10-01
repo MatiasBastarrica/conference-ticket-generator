@@ -305,6 +305,10 @@ form > button:hover {
   gap: 1rem;
 }
 
+.success-modal .subtitle {
+  max-width: 40ch;
+}
+
 .ticket {
   text-align: start;
   display: grid;
@@ -326,7 +330,9 @@ form > button:hover {
   transform: translateY(-50%) rotate(90deg);
   content: "#01609";
   font: inherit;
-  color: inherit;
+  color: #6f698b;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .email-address {
@@ -354,21 +360,27 @@ form > button:hover {
   display: inline-block;
 }
 
-.ticket h3 {
-  font-size: 1.4rem;
+.ticket__header h3 {
+  font-size: clamp(1.4rem, 1.1887rem + 0.9014vw, 2rem);
 }
 
 .ticket .full-name {
   font-weight: var(--fw-500);
+  font-size: 1.4rem;
 }
 
 .location-info,
 .social-info {
-  font-size: 0.825rem;
+  font-size: clamp(0.825rem, 0.7634rem + 0.2629vw, 1rem);
   margin-top: 0.2rem;
+  color: #cbcada;
 }
 
-.ticket__header,
+.ticket__header {
+  display: flex;
+  gap: 1rem;
+}
+
 .ticket__content {
   display: flex;
   align-items: center;
@@ -453,6 +465,15 @@ form > button:hover {
     width: 500px;
     height: 300px;
     background-size: 100%;
+  }
+
+  .ticket {
+    padding: 1.5rem 1rem;
+  }
+
+  .location-info,
+  .social-info {
+    margin-top: 0.5rem;
   }
 }
 
