@@ -154,6 +154,19 @@ function getFormStatus() {
   return true;
 }
 
+function displayAvatar() {
+  const avatarImgElement = document.querySelector(
+    ".avatar-photo-container img"
+  );
+  const file = fileInput.files[0];
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    avatarImgElement.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
 // ### EVENT LISTENERS ###
 
 dropbox.addEventListener("dragenter", dragenter, false);
@@ -203,6 +216,7 @@ form.addEventListener("submit", (e) => {
       });
       emailDisplay.textContent = emailInput.value;
       githubDisplay.textContent = gitHubInput.value;
+      displayAvatar();
     }
   });
 });
